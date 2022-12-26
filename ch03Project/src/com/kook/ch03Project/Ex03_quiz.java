@@ -30,10 +30,10 @@ public class Ex03_quiz {
 		String xyz = "xyz";
 			
 		//9. str1이 null인지 비교하고 결과 출력
-		System.out.println("str1이 null인지 비교하라 : " + (str1==null));
+		System.out.println("str1이 null인지 비교 : " + (str1==null));
 	
 		//10. str1이 xyz인지 비교하고 출력
-		System.out.println("str1이 xyz인지 비교하라 : " + (str1==xyz));
+		System.out.println("str1이 xyz인지 비교 : " + (str1==xyz));
 	}
 }
 
