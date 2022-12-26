@@ -13,7 +13,7 @@ public class Ex03_quiz {
 		System.out.println("10 / 5 = " + x / y);
 		
 		//4. x값을 1 증가시켜 출력(증가 연산자 사용)
-		y = ++x;
+		x = ++x;
 		System.out.println("x + 1 증가 값 : " + x);
 		
 		x = 10;
