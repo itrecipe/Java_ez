@@ -6,7 +6,6 @@ public class Ex03_quiz {
 		//3,5 : int x,y를 선언하고 초기값을 10,5 각각 초기화 한다
 		int x = 10 , y = 5;
 		
-		
 		//1. 10 * 5 결과 출력
 		System.out.println("10 * 5 = " + x * y);
 		
