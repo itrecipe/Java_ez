@@ -3,6 +3,8 @@ package com.kook.ch03Project;
 public class Ex03_quiz {
 
 	public static void main(String[] args) {
+		//1~10번 문제는 내가 직접 푼것들
+		
 		//3,5 : int x,y를 선언하고 초기값을 10,5 각각 초기화 한다
 		int x = 10 , y = 5;
 		
@@ -30,10 +32,25 @@ public class Ex03_quiz {
 		String xyz = "xyz";
 			
 		//9. str1이 null인지 비교하고 결과 출력
-		System.out.println("str1이 null인지 비교 : " + (str1==null));
+		System.out.println("str1이 null인지 비교 : " + (str1==null)); 
+		//문자열 비교시 == 사용가능
 	
 		//10. str1이 xyz인지 비교하고 출력
 		System.out.println("str1이 xyz인지 비교 : " + (str1==xyz));
+		//문자열 리터럴(값) 비교시 == 사용가능
+		
+		//국쌤 퀴즈 수업설명
+		System.out.println("str1 값 출력 : " + str1.equals("xyz")); //값을 줄땐 equals를 사용하는것이 좋음
+		
+		String str2 = new String("abcde"); //str1과 str2는 값은 같은데 주소가 다름
+		//참조변수인 String의 변수 값에는 주소가 저장됨
+		System.out.println("str1과 str2가 같은지 비교 : " + (str1 == str2)); //참조형 비교시 ==은 주소 비교로 false
+		System.out.println("str1과 str2가 같은지 equals메서드로 비교 : " + str1.equals(str2)); //값을 비교하므로 true
+		
+		String str3 = "abcde";
+		System.out.println("str1과 str3가 같은지 비교 : "+ (str1 == str3));
+		//리터럴로 만든 String객체는 값이 같으면 주소가 같음
+		//대소문자 무시하고 동등 비교는 equalsIgnoreCase(str)
 	}
 }
 
