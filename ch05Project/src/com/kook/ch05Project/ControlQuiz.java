@@ -29,7 +29,6 @@ public class ControlQuiz {
 		
 		int time = 20;
 		String result = (time < 18) ? "Good day" : "Good evening" ;
-		
 		System.out.println("result 값 출력 : " + result);
 		
 		/*
