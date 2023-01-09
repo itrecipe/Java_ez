@@ -113,7 +113,7 @@ abstract class Animal1 {
 /* 8.인터페이스 Animal2를 만듬(메서드는 7번의 메서드 2개 사용)
      구현한 클래스 Dog1 클래스를 만듬(메서드 내용 마음대로) */
 	interface Animal2{
-		//인터페이스는 추상메서스와 상수(public, static ,final)만 있어야함
+		//인터페이스는 추상메서스와 상수(public static final)만 있어야함
 		//자바 1.8부터 default인 인스턴스 메서드와 static메서드 추가됨.
 		
 		//상수
@@ -143,6 +143,7 @@ abstract class Animal1 {
 			System.out.println("인터페이스 구현-sleep");			
 		}
 	}
+
 /* 1. Animal클래스는 리턴타입이 void이고 파라미터는 없으며 이름은 animalSound인 인스턴스 메서드를 갖는다.
 	메서드 내용은 The animal makes a sound를 출력
    2. Animal을 상속한 pig 클래스는 Aimal의 메서드를 재정의하여 사용
