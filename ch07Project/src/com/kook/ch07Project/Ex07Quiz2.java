@@ -36,7 +36,8 @@ public class Ex07Quiz2 {
 		 //인스턴스내부클래스 객체는 외부클래스객체.new 내부클래스 생성자 
 		 OuterClass.StaticInnerClass sinner = new OuterClass.StaticInnerClass();
 		 //내부 클래스 접근은 클래스형 내부 클래스 경로로 생성자 호출
-	
+		
+		// 7~8번 문제
 		 Animal2 dogi = new Dog1();
 		 dogi.animalSound1();
 		 dogi.sleep();
