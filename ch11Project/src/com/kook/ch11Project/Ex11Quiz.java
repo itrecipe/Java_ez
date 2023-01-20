@@ -7,20 +7,29 @@ public class Ex11Quiz {
 	public static void main(String[] args) {
 		//1
 		ArrayList<String> cars = new ArrayList<>();
+		/* ArrayList<E>로 정의된 제네릭 클래스이므로 참조형변수 선언과 생성자 사용시 <사용할 데이터형>을 사용
+		   단, 1.8버전부터는 ArrayList<String> cars = new ArrayList<>(); 로 사용가능 
+		   제네릭을 사용한 ArrayList cars에는 대입파라미터는 String이므로 String값만 사용가능
+		*/
+		
 		//2
 		cars.add("Volovo");
 		cars.add("BMW");
 		cars.add("Ford");
 		cars.add("Kia");
+		
 		//3
-		System.out.println("3번 : " + cars);
+		System.out.println("3번 : " + cars); //Collection은 toString() 재정의(오버라이딩)됨
+		
 		//4
 		System.out.println("4번 : " + cars.get(0));
+		//ArratList의 데이터를 반환해주는 메서드는 get(int index)
+		
 		//5
-		cars.set(0, "Opel");
+		cars.set(0, "Opel"); //변경시 set(int index, 변경값)
 		System.out.println("5번 : " + cars);
 		//6
-		cars.remove(0);
+		cars.remove(0); //remove(int index)
 		System.out.println("6번 : " + cars);
 		//7
 		cars.clear();
@@ -33,17 +42,19 @@ public class Ex11Quiz {
 		System.out.println("8번 : " + cars);
 		System.out.println();
 		//9
-		for(int i=0; i < cars.size(); i++) {
+		for(int i=0; i < cars.size(); i++) { //Collection 구성요소의 갯수는 size()로 구함
 			//System.out.println(i);
-			System.out.println("9번 : " + cars);
+			System.out.println("9번 : " + cars.get(i));
 		}
 		System.out.println();
 		
 		//10
+		//enhanced for문은 배열과 Collection에 적용
 		for(String str : cars) {
-			System.out.println("10번 : " + str);
-			
+			System.out.println("10번 : " + str);		
 		}
+		System.out.println();
+		
 		//11
 		HashMap<String, String> capital = new HashMap<String, String>();
 		
@@ -53,21 +64,36 @@ public class Ex11Quiz {
 		capital.put("Germany", "Berlin");
 		capital.put("Japan", "Thokyo");
 		
-		System.out.println("11번 : " + capital);
+		System.out.println("11, 12번 : " + capital);
+		//Map도 toString()를 재정의함
+		//{Japan=Thokyo, England=London, Germany=Berlin, Korea=Seoul}
 		
+		//13
+		System.out.println("13번 : " + capital.get("England"));
+		//get(key값)으로 그 key에 해당하는 value값 반환
+		
+		
+		//14
+		capital.remove("England");
+		System.out.println("14번 : " + capital);
+		
+		//15
+		capital.clear();
+	    System.out.println("15번 : " + capital);
+		
+		//16
+	    capital.put("England", "London");
+		capital.put("Korea", "Seoul");
+		capital.put("Germany", "Berlin");
+		capital.put("Japan", "Thokyo");
+
 		//17
-		for(int i = list2.size()-1; i >= 0; i--) {
-			/* size()메서드는 List의 원소개수
-			   get(색인번호)는 색인번호의 저장된 원소값
-			   contains(값)은 값을 포함 여부
-			   remove(색인번호)는 색인번호의 원소값 제거(삭제)
-			   제거나 추가시 맨끝에서 하는 것은 바로 처리가 됨 
-			   맨처음이나 중간에서 처리는 새로운 배열을 만들어 처리(처리 속도는 늦어짐)
-			   현재 for문에서는 맨마지막 원소부터 처리 (이유는 속도가 늦어지지 않게 하기 위함)
-			*/
-			if(list1.contains(list2.get(i))) {
-				list2.remove(i);
-			}
+	    //enhanced for문 key로 구성된 Set객체를 얻어서 key를 반복하여 얻어냄
+	    for(String key : capital.keySet()) {
+	    	//keySet()은 key로 구성된 Set를 반환
+			System.out.println("17번 : " + key + "capital value 값 : " + capital.get(key));
+		}
+		System.out.println();
 		
 		//18
 		Iterator<String> it = cars.iterator();
