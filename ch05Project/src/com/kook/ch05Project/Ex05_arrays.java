@@ -15,7 +15,7 @@ public class Ex05_arrays {
 		String strArr = Arrays.toString(arr);
 		System.out.println(strArr); //[0, 1, 2, 3, 4] -> 값 출력
 		
-		//2차원 배열 문자열화는 Arrays.toString(1차원 배열명);
+		//2차원 배열 문자열화는 Arrays.toString(2차원 배열명);
 		System.out.println(Arrays.deepToString(arr2D)); // "[[11, 12], [21, 22]]"
 	
 		int[] arr1 = {0,1,2,3,4,5};
