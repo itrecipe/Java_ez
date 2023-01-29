@@ -2,7 +2,7 @@ package com.kook.ch05Project;
 
 import java.util.Arrays;
 
-public class Ex05_Arrays {
+public class Ex05_arrays {
 
 	//국.쌤 예제(교재에 없는 내용)
 	public static void main(String[] args) {
