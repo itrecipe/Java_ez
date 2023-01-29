@@ -69,3 +69,38 @@ class Animal {
 		this.age = age;
 	}
 }
+
+/*
+main메서드 안에서 다음을 구현한다 (자바교재의 ch5 배열편을 참조한다)   
+가. 문자열 배열 cars1를 만들고 초기값을 배열값 "Volvo", "BMW", "Ford", "Mazda"로 초기화
+
+나. 문자열 배열 cars2를 new를 이용하여 만들고 초기값은 "Volvo", "BMW", "Ford", "Mazda" 사용
+
+다. 문자열 배열 cars3를 크기 4를 지정하여 만들고 각원소에 "Volvo", "BMW", "Ford", "Mazda"를 넣어줌
+
+라. cars1의 원소값을 기본 for문을 이용하여 출력
+
+마. cars2의 원소값을 enhnaced for문을 이용하여 출력
+
+바. int로된 2차원 배열 myNumbers를 만들고 초기값은 {1, 2, 3, 4}, {5, 6, 7}를 이용
+
+사. 2번째 행의 두번째 열값을 출력
+
+아. for문을 이용하여 각 원소값을 출력
+
+자. Animal클래스를 이 java파일 안에 만듬
+
+차 멤버변수는 kind, age, name을 갖는다.(type은 age는 int나머지는 String)
+
+카. 멤버 메서드는 public void setAge(int age) {
+       this.age = age;
+ }
+
+타. main메서드 안에서 Animal객체 animal1과 anlmal2를 만듬
+
+파. animal1의 kind는 bird, age는 10,name은 puppy로 초기화
+   animal2의 kind는 fish, age는 15,name은 kalchi로 초기화
+		
+하. 메서드 setAge를 call해보세요
+
+*/
