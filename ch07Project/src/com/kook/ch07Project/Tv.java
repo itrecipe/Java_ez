@@ -1,7 +1,7 @@
 package com.kook.ch07Project;
 
 public class Tv {
-	boolean power; //ì „ì›ìƒíƒœ on/off, flase
+	boolean power; //Àü¿ø»óÅÂ on/off, flase
 	int channel;
 	
 	void power() {
