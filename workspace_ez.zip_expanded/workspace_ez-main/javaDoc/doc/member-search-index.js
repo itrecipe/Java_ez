@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.kook.javaDoc","c":"JavaDocClass","l":"JavaDocClass()","u":"%3Cinit%3E()"},{"p":"com.kook.javaDoc","c":"JavaDocClass","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"com.kook.javaDoc","c":"JavaDocClass","l":"myMethod()"}];updateSearchResults();
