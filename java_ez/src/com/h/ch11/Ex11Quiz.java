@@ -7,9 +7,9 @@ public class Ex11Quiz {
 	public static void main(String[] args) {
 		//1
 		ArrayList<String> cars = new ArrayList<>();
-		/* ArrayList<E>濡? ?젙?쓽?맂 ?젣?꽕由? ?겢?옒?뒪?씠誘?濡? 李몄“?삎蹂??닔 ?꽑?뼵怨? ?깮?꽦?옄 ?궗?슜?떆 <?궗?슜?븷 ?뜲?씠?꽣?삎>?쓣 ?궗?슜
-		   ?떒, 1.8踰꾩쟾遺??꽣?뒗 ArrayList<String> cars = new ArrayList<>(); 濡? ?궗?슜媛??뒫 
-		   ?젣?꽕由??쓣 ?궗?슜?븳 ArrayList cars?뿉?뒗 ???엯?뙆?씪誘명꽣?뒗 String?씠誘?濡? String媛믩쭔 ?궗?슜媛??뒫
+		/* ArrayList<E>로 정의된 제네릭 클래스이므로 참조형변수 선언과 생성자 사용시 <사용할 데이터형>을 사용
+		   단, 1.8버전부터는 ArrayList<String> cars = new ArrayList<>(); 로 사용가능 
+		   제네릭을 사용한 ArrayList cars에는 대입파라미터는 String이므로 String값만 사용가능
 		*/
 		
 		//2
@@ -19,39 +19,39 @@ public class Ex11Quiz {
 		cars.add("Kia");
 		
 		//3
-		System.out.println("3踰? : " + cars); //Collection?? toString() ?옱?젙?쓽(?삤踰꾨씪?씠?뵫)?맖
+		System.out.println("3번 : " + cars); //Collection은 toString() 재정의(오버라이딩)됨
 		
 		//4
-		System.out.println("4踰? : " + cars.get(0));
-		//ArratList?쓽 ?뜲?씠?꽣瑜? 諛섑솚?빐二쇰뒗 硫붿꽌?뱶?뒗 get(int index)
+		System.out.println("4번 : " + cars.get(0));
+		//ArratList의 데이터를 반환해주는 메서드는 get(int index)
 		
 		//5
-		cars.set(0, "Opel"); //蹂?寃쎌떆 set(int index, 蹂?寃쎄컪)
-		System.out.println("5踰? : " + cars);
+		cars.set(0, "Opel"); //변경시 set(int index, 변경값)
+		System.out.println("5번 : " + cars);
 		//6
 		cars.remove(0); //remove(int index)
-		System.out.println("6踰? : " + cars);
+		System.out.println("6번 : " + cars);
 		//7
 		cars.clear();
-		System.out.println("7踰? : " + cars);
+		System.out.println("7번 : " + cars);
 		//8
 		cars.add("Volovo");
 		cars.add("BMW");
 		cars.add("Ford");
 		cars.add("Kia");
-		System.out.println("8踰? : " + cars);
+		System.out.println("8번 : " + cars);
 		System.out.println();
 		//9
-		for(int i=0; i < cars.size(); i++) { //Collection 援ъ꽦?슂?냼?쓽 媛??닔?뒗 size()濡? 援ы븿
+		for(int i=0; i < cars.size(); i++) { //Collection 구성요소의 갯수는 size()로 구함
 			//System.out.println(i);
-			System.out.println("9踰? : " + cars.get(i));
+			System.out.println("9번 : " + cars.get(i));
 		}
 		System.out.println();
 		
 		//10
-		//enhanced for臾몄? 諛곗뿴怨? Collection?뿉 ?쟻?슜
+		//enhanced for문은 배열과 Collection에 적용
 		for(String str : cars) {
-			System.out.println("10踰? : " + str);		
+			System.out.println("10번 : " + str);		
 		}
 		System.out.println();
 		
@@ -64,22 +64,22 @@ public class Ex11Quiz {
 		capital.put("Germany", "Berlin");
 		capital.put("Japan", "Thokyo");
 		
-		System.out.println("11, 12踰? : " + capital);
-		//Map?룄 toString()瑜? ?옱?젙?쓽?븿
+		System.out.println("11, 12번 : " + capital);
+		//Map도 toString()를 재정의함
 		//{Japan=Thokyo, England=London, Germany=Berlin, Korea=Seoul}
 		
 		//13
-		System.out.println("13踰? : " + capital.get("England"));
-		//get(key媛?)?쑝濡? 洹? key?뿉 ?빐?떦?븯?뒗 value媛? 諛섑솚
+		System.out.println("13번 : " + capital.get("England"));
+		//get(key값)으로 그 key에 해당하는 value값 반환
 		
 		
 		//14
 		capital.remove("England");
-		System.out.println("14踰? : " + capital);
+		System.out.println("14번 : " + capital);
 		
 		//15
 		capital.clear();
-	    System.out.println("15踰? : " + capital);
+	    System.out.println("15번 : " + capital);
 		
 		//16
 	    capital.put("England", "London");
@@ -88,10 +88,10 @@ public class Ex11Quiz {
 		capital.put("Japan", "Thokyo");
 
 		//17
-	    //enhanced for臾? key濡? 援ъ꽦?맂 Set媛앹껜瑜? ?뼸?뼱?꽌 key瑜? 諛섎났?븯?뿬 ?뼸?뼱?깂
+	    //enhanced for문 key로 구성된 Set객체를 얻어서 key를 반복하여 얻어냄
 	    for(String key : capital.keySet()) {
-	    	//keySet()?? key濡? 援ъ꽦?맂 Set瑜? 諛섑솚
-			System.out.println("17踰? : " + key + "capital value 媛? : " + capital.get(key));
+	    	//keySet()은 key로 구성된 Set를 반환
+			System.out.println("17번 : " + key + "capital value 값 : " + capital.get(key));
 		}
 		System.out.println();
 		
@@ -100,30 +100,30 @@ public class Ex11Quiz {
 		
 		//19
 		while(it.hasNext()) {
-			System.out.println("19踰? : " + it.next());
+			System.out.println("19번 : " + it.next());
 		}
 	}
 }
 
-/* 1.ArrayList媛앹껜 cars瑜? 留뚮뱶?뒗?뜲 ?젣?꽕由??쑝濡? String?겢?옒?뒪瑜? ?궗?슜
-   2.cars 媛앹껜?뿉 Volovo,BMW,Ford,Kia瑜? 異붽?
-   3.cars媛앹껜瑜? ?봽由고듃
-   4.泥ル쾲吏? ???옣?맂 ?슂?냼瑜? 諛섑솚?븯?뒗 硫붿꽌?뱶瑜? ?씠?슜?븯?뿬 異쒕젰
-   5.泥ル쾲吏? ?슂?냼瑜? Opel濡? 蹂?寃쏀븯怨? 異쒕젰
-   6.泥ル쾲吏? ?슂?냼瑜? ?젣嫄고븯怨? 異쒕젰
-   7.紐⑤뱺 ?슂?냼瑜? ?젣嫄고븯怨? 異쒕젰
-   8.cars?뿉 ?떎?떆 2踰? 異붽?
-   9.湲곕낯 for臾몄쑝濡? cars?쓽 媛? ?슂?냼瑜? 異쒕젰
-   10.enhanced for臾몄쑝濡? cars?쓽 媛? ?슂?냼瑜? 異쒕젰
-   11.HashMap媛앹껜 capital?쓣 留뚮뱶?뒗?뜲 ?젣?꽕由??쓣 ?궗?슜 key?룄 String, 
-      value?룄 String?씤 ?젣?꽕由? <String, String>?쓣 ?궗?슜
-   12.England?뒗 London, Korea?뒗 Seoul, Germany?뒗 Berlin, Japan?? Tokyo瑜? capital?뿉 異붽?
-      ?븯怨? print(?굹?씪紐낆쓣 key濡? ?궗?슜)
-   13.England?쓽 value瑜? ?뼸?뼱?꽌 異쒕젰
-   14.key媛? England?씤 ?슂?냼 ?궘?젣?썑 print
-   15.紐⑤뱺 ?슂?냼 ?궘?젣?븯怨? print
-   16.capital媛앹껜?뿉 ?떎?떆 12踰? 異붽?
-   17.for臾몄쑝濡? key set瑜? ?뼸?뼱 ?빐?떦 ?궎 媛믪쓣 ?씠?슜?빐 value瑜? print, keySet()?궗?슜
-   18.cars媛앹껜?쓽 Iterator媛앹껜 it ?깮?꽦
-   19.it瑜? ?씠?슜?빐 cars?뿉 ???옣?맂 媛? 異쒕젰
+/* 1.ArrayList객체 cars를 만드는데 제네릭으로 String클래스를 사용
+   2.cars 객체에 Volovo,BMW,Ford,Kia를 추가
+   3.cars객체를 프린트
+   4.첫번째 저장된 요소를 반환하는 메서드를 이용하여 출력
+   5.첫번째 요소를 Opel로 변경하고 출력
+   6.첫번째 요소를 제거하고 출력
+   7.모든 요소를 제거하고 출력
+   8.cars에 다시 2번 추가
+   9.기본 for문으로 cars의 각 요소를 출력
+   10.enhanced for문으로 cars의 각 요소를 출력
+   11.HashMap객체 capital을 만드는데 제네릭을 사용 key도 String, 
+      value도 String인 제네릭 <String, String>을 사용
+   12.England는 London, Korea는 Seoul, Germany는 Berlin, Japan은 Tokyo를 capital에 추가
+      하고 print(나라명을 key로 사용)
+   13.England의 value를 얻어서 출력
+   14.key가 England인 요소 삭제후 print
+   15.모든 요소 삭제하고 print
+   16.capital객체에 다시 12번 추가
+   17.for문으로 key set를 얻어 해당 키 값을 이용해 value를 print, keySet()사용
+   18.cars객체의 Iterator객체 it 생성
+   19.it를 이용해 cars에 저장된 값 출력
 */

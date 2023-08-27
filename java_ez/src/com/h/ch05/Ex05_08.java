@@ -3,12 +3,12 @@ package com.h.ch05;
 public class Ex05_08 {
 
 	public static void main(String[] args) {
-		//援??뙟 蹂??삎 ?삁?젣(?썝蹂멸낵?궡吏앸떎由?)
+		//국쌤 변형 예제(원본과살짝다름)
 		
-		// 2李⑥썝 諛곗뿴?쓽 珥덇린?솕
+		// 2차원 배열의 초기화
 		int[][] score = {
-				//4?뻾 3?뿴(4*3) 諛곗뿴 int[4][3]
-				//?꽑?뼵怨? ?룞?떆?뿉 由ы꽣?윺 媛믪쑝濡? 珥덇린?솕
+				//4행 3열(4*3) 배열 int[4][3]
+				//선언과 동시에 리터럴 값으로 초기화
 				{100, 100, 100},
 				{20, 30, 20},
 				{30, 40, 50},
@@ -18,9 +18,9 @@ public class Ex05_08 {
 		int sum = 0;
 		
 		for(int i=0; i < score.length; i++) {
-			//2李⑥썝 諛곗뿴?떆 score.length?뒗 ?뻾?쓽 媛쒖닔(4)
+			//2차원 배열시 score.length는 행의 개수(4)
 			for(int j=0; j < score[i].length; j++) {
-				//諛곗뿴 媛곹뻾?쓽 ?슂?냼?쓽 媛쒖닔?뒗 score[i].length
+				//배열 각행의 요소의 개수는 score[i].length
 				System.out.printf("score[%d][%d]=%d%n", i, j, score[i][j]);
 				
 				sum += score[i][j];
@@ -31,7 +31,7 @@ public class Ex05_08 {
 }
 
 /*
- * 2李⑥썝 諛곗뿴 ?궗?슜?삁?떆
+ * 2차원 배열 사용예시
  * ex1)
  * int[][] score = new int[][] {
  *  {100, 100, 100}, 

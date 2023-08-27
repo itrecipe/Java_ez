@@ -4,70 +4,70 @@ import java.util.Arrays;
 
 public class Ex05_arrays {
 
-	//援?.?뙟 ?삁?젣(援먯옱?뿉 ?뾾?뒗 ?궡?슜)
+	//국.쌤 예제(교재에 없는 내용)
 	public static void main(String[] args) {
-		//Arrays ?겢?옒?뒪 : 紐⑤뱺 硫붿꽌?뱶媛? static(?겢?옒?뒪?삎) 硫붿꽌?뱶濡? ?샇異쒖떆 ?겢?옒?뒪紐?,硫붿꽌?뱶紐?()
+		//Arrays 클래스 : 모든 메서드가 static(클래스형) 메서드로 호출시 클래스명,메서드명()
 		
-		//Arrays.硫붿꽌?뱶紐?()
-		int[] arr = {0,1,2,3,4}; //1李⑥썝 諛곗뿴 ?깮?꽦
-		int[][] arr2D = {{11,12},{21,22}}; //2李⑥썝 諛곗뿴 : 2?뻾 * 2?뿴 ?깮?꽦
+		//Arrays.메서드명()
+		int[] arr = {0,1,2,3,4}; //1차원 배열 생성
+		int[][] arr2D = {{11,12},{21,22}}; //2차원 배열 : 2행 * 2열 생성
 		
-		//1李⑥썝 諛곗뿴 臾몄옄?뿴?솕?뒗 Arrays.toString(1李⑥썝 諛곗뿴紐?);
+		//1차원 배열 문자열화는 Arrays.toString(1차원 배열명);
 		String strArr = Arrays.toString(arr); 
-		System.out.println(strArr); //[0,1,2,3,4] -> 媛? 異쒕젰
+		System.out.println(strArr); //[0,1,2,3,4] -> 값 출력
 		/*
-		 * toString硫붿꽌?뱶 : 媛앹껜媛? 媛뽮퀬 ?엳?뒗 ?젙蹂대굹 媛믩뱾?쓣 臾몄옄?뿴濡? 留뚮뱾?뼱 
-		 * 由ы꽩(諛섑솚) 硫붿꽌?뱶瑜? ?옱?젙?쓽?빐?꽌 ?궗?슜 
-		 * (?옱?젙?쓽 : ?젙?쓽?릺?뼱 ?엳?뒗 蹂??닔?굹 諛곗뿴 ?슂?냼媛? ?떎?떆 ?젙?쓽?릺?뒗寃?)
-		 * 硫붿냼?뱶?뒗 ?뙆?씪誘명꽣濡? 諛곗뿴?쓣 ?엯?젰諛쏆븘?꽌,
-		 * java.util.Arrays.toString() : 硫붿냼?뱶?뒗 ?뙆?씪誘명꽣濡? 諛곗뿴?쓣 ?엯?젰諛쏆븘?꽌,
-		 * 諛곗뿴?뿉 ?젙?쓽?맂 媛믩뱾?쓣 臾몄옄?뿴 ?삎?깭濡? 留뚮뱾?뼱?꽌 由ы꽩?빐 以띾땲?떎.
+		 * toString메서드 : 객체가 갖고 있는 정보나 값들을 문자열로 만들어 
+		 * 리턴(반환) 메서드를 재정의해서 사용 
+		 * (재정의 : 정의되어 있는 변수나 배열 요소가 다시 정의되는것)
+		 * 메소드는 파라미터로 배열을 입력받아서,
+		 * java.util.Arrays.toString() : 메소드는 파라미터로 배열을 입력받아서,
+		 * 배열에 정의된 값들을 문자열 형태로 만들어서 리턴해 줍니다.
 		 */
 		
-		//2李⑥썝 諛곗뿴 臾몄옄?뿴?솕?뒗 Arrays.toString(1李⑥썝 諛곗뿴紐?);
+		//2차원 배열 문자열화는 Arrays.toString(1차원 배열명);
 		System.out.println(Arrays.deepToString(arr2D)); //"[[11,12],[21,22]"
-		// Arrays.deepToString(1李⑥썝 諛곗뿴紐?) : ?떎李⑥썝 諛곗뿴?뿉?꽌?뒗 ?씠寃껋쓣 ?궗?슜?븳?떎.
+		// Arrays.deepToString(1차원 배열명) : 다차원 배열에서는 이것을 사용한다.
 		
 		int[] arr1 = {0,1,2,3,4,5};
 		int[][] arr2D1 = {{11,12},{21,22}};
-		//1李⑥썝 諛곗뿴 鍮꾧탳(arr,arr1)
-		System.out.println("1李⑥썝 諛곗뿴 鍮꾧탳 : " + Arrays.equals(arr, arr1));
+		//1차원 배열 비교(arr,arr1)
+		System.out.println("1차원 배열 비교 : " + Arrays.equals(arr, arr1));
 		
 		
-		//2李⑥썝 諛곗뿴 鍮꾧탳(arr,arr1)
-		System.out.println("2李⑥썝 諛곗뿴 鍮꾧탳 : " + Arrays.deepEquals(arr2D, arr2D1));
+		//2차원 배열 비교(arr,arr1)
+		System.out.println("2차원 배열 비교 : " + Arrays.deepEquals(arr2D, arr2D1));
 		
-		//諛곗뿴?쓽 ?젙?젹?? Arrays.sort(諛곗뿴紐?);
+		//배열의 정렬은 Arrays.sort(배열명);
 		int[] arr2 = {5,3,15,6,9,8};
-		Arrays.sort(arr2); //sort()硫붿꽌?뱶?뒗 由ы꽩媛믪씠 ?뾾怨?, ?옄湲? ?옄?떊?쓣 ?젙?젹?븿.
-		System.out.println("?젙?젹 : " + Arrays.toString(arr2));
+		Arrays.sort(arr2); //sort()메서드는 리턴값이 없고, 자기 자신을 정렬함.
+		System.out.println("정렬 : " + Arrays.toString(arr2));
 		
 		/*
-		 * 諛곗뿴?쓽 蹂듭궗 copyOf?뒗 吏??젙?맂 ?닽?옄 留뚰겮?쓣,
-		 * copyOfRange()?뒗 諛곗뿴?쓽 援ш컙?쓣 吏??젙?븯?뿬 蹂듭궗?븳 ?떎瑜? 諛곗뿴?쓣 留뚮벉 
-		 * 紐⑤몢 蹂듭궗?븯?뿬 ?깉濡쒖슫 諛곗뿴?쓣 諛섑솚
+		 * 배열의 복사 copyOf는 지정된 숫자 만큼을,
+		 * copyOfRange()는 배열의 구간을 지정하여 복사한 다른 배열을 만듬 
+		 * 모두 복사하여 새로운 배열을 반환
 		 */
 		int[] arr3 = {5,6,7,8,9};
-		int[] arr4 = Arrays.copyOf(arr3, 3); //?깉濡쒖슫 諛곗뿴?쓣 ?깮?꽦
+		int[] arr4 = Arrays.copyOf(arr3, 3); //새로운 배열을 생성
 		System.out.println("arr4 : " + Arrays.toString(arr4));
 		
 		int[] arr5 = Arrays.copyOf(arr3, 10);
-		//蹂듭궗?븯?뒗 諛곗뿴?씠 ?썝?냼?쓽 媛쒖닔 蹂대떎 留롮쓣?떆 ?굹癒몄??뒗 湲곕낯媛믪쑝濡? 梨꾩?
+		//복사하는 배열이 원소의 개수 보다 많을시 나머지는 기본값으로 채움
 		
 		int[] arr6 = Arrays.copyOfRange(arr3, 1, 4);
-		//1?? ?떆?옉 ?깋?씤踰덊샇, 4?뒗 醫낅즺 ?깋?씤踰덊샇(踰붿쐞?뒗 洹? ?븵源뚯?)
+		//1은 시작 색인번호, 4는 종료 색인번호(범위는 그 앞까지)
 		System.out.println("arr 6 : " + Arrays.toString(arr6));
 		
-		//System.arraycopy()瑜? ?궗?슜?빐 蹂듭궗
+		//System.arraycopy()를 사용해 복사
 		int[] scopyArr = {1,2,3,4,5};
 		int[] scopyArr1 = new int[10];
 		System.arraycopy(scopyArr, 0, scopyArr1, 0, 5);
 		/*
-		 * scopyArr?뒗 蹂듭궗諛곗뿴, 0?? 蹂듭궗諛곗뿴?쓽 ?떆?옉 ?깋?씤踰덊샇, 
-		 * scopyArr1?? 蹂듭궗蹂? 諛곗뿴, 0?? ?떆?옉 ?깋?씤踰덊샇, 5?뒗 ?썝?냼媛쒖닔
+		 * scopyArr는 복사배열, 0은 복사배열의 시작 색인번호, 
+		 * scopyArr1은 복사본 배열, 0은 시작 색인번호, 5는 원소개수
 		 */
 		
-		System.out.println("System.arraycopy()瑜? ?궗?슜?븳 蹂듭궗 scopyArr : " + Arrays.toString(scopyArr));
-		System.out.println("System.arraycopy()瑜? ?궗?슜?븳 蹂듭궗 scopyArr1 : " + Arrays.toString(scopyArr1));
+		System.out.println("System.arraycopy()를 사용한 복사 scopyArr : " + Arrays.toString(scopyArr));
+		System.out.println("System.arraycopy()를 사용한 복사 scopyArr1 : " + Arrays.toString(scopyArr1));
 	}
 }

@@ -6,19 +6,19 @@ public class JdbcClass {
 
 	public static void main(String[] args) {
 		
-		Connection con = null; //DB?? ?뿰寃? 泥섎━ ?겢?옒?뒪
-		ResultSet rs = null; //DB?쓽 議고쉶 寃곌낵瑜? 媛뽮퀬 ?엳?쑝硫?, 泥섎━?븯?뒗 ?겢?옒?뒪
-		PreparedStatement psmt = null; //sql臾몄쓣 泥섎━?븯?뒗 ?겢?옒?뒪
+		Connection con = null; //DB와 연결 처리 클래스
+		ResultSet rs = null; //DB의 조회 결과를 갖고 있으며, 처리하는 클래스
+		PreparedStatement psmt = null; //sql문을 처리하는 클래스
 		
 		try {
-			//?삤?씪?겢 ?뱶?씪?씠踰? 濡쒕뵫
+			//오라클 드라이버 로딩
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String id = "scott";
 			String pw = "tiger";
-			//?삤?씪?겢?뿉 ?뿰寃?
+			//오라클에 연결
 			con = DriverManager.getConnection(url, id, pw);
-			System.out.println("?젙?긽 ?뿰寃?");
+			System.out.println("정상 연결");
 			
 			String query = "SELECT * FROM DEPT";
 			psmt = con.prepareStatement(query);
@@ -50,11 +50,11 @@ public class JdbcClass {
 	}
 }
 
-/* Oracle JDBC ?궗?슜踰?
-   - oracle library瑜? ?봽濡쒖젥?듃?뿉 ?룷?븿 ?떆耳쒖빞 ?룞?옉 ?븳?떎.
-   - ?봽濡쒖젥?듃?뿉 ??怨? ?슦?겢由? -> Properties瑜? ?꽑?깮 -> java Build Path ?꽑?깮 -> Module Path瑜? ?꽑?깮 
-     -> add external jar?쓣 ?꽑?깮 
-   - C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib?뿉 ?뱾?뼱媛?硫? ojdbc6_g.jar瑜? ?겢由??븯?뿬 
-       ?냽?꽦?뿉 ?뱾?뼱媛??꽌 ?쟾泥? 寃쎈줈瑜? 蹂듭궗?븯怨? jar?뙆?씪?쓣 濡쒕뱶?떆?궓?떎 洹? ?떎?쓬 apply瑜? ?늻瑜닿퀬 apply and close瑜? ?겢由??븯?뿬 ?뀒?뒪?듃瑜? ?빐蹂몃떎.
-      "?젙?긽 ?뿰寃?"?씠?씪?뒗 臾멸뎄媛? 異쒕젰?릺怨? ?삁?떆濡? ?궗?슜?븯?뒗 scott怨꾩젙?쓽 DEPT?뀒?씠釉? 而щ읆?씠 議고쉶?릺硫? ?젙?긽?쑝濡? ?젒?냽?맂寃껋씠?떎.
+/* Oracle JDBC 사용법
+   - oracle library를 프로젝트에 포함 시켜야 동작 한다.
+   - 프로젝트에 대고 우클릭 -> Properties를 선택 -> java Build Path 선택 -> Module Path를 선택 
+     -> add external jar을 선택 
+   - C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib에 들어가면 ojdbc6_g.jar를 클릭하여 
+       속성에 들어가서 전체 경로를 복사하고 jar파일을 로드시킨다 그 다음 apply를 누르고 apply and close를 클릭하여 테스트를 해본다.
+      "정상 연결"이라는 문구가 출력되고 예시로 사용하는 scott계정의 DEPT테이블 컬럼이 조회되면 정상으로 접속된것이다.
 */

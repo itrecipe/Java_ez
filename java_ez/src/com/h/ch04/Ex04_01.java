@@ -3,15 +3,15 @@ package com.h.ch04;
 public class Ex04_01 {
 
 	public static void main(String[] args) {
-		//?옄諛붿쓽?젙?꽍 ?삁?젣
+		//자바의정석 예제
 		int score = 80;
 		
-		//if臾?()?븞?뿉?뒗 鍮꾧탳 ?뿰?궛?씠?굹 ?끉由ъ뿰?궛泥섎읆 boolean媛믪쓣 諛섑솚?빐?빞?븿.
-		//愿꾪샇 ?븞?쓽 ?뿰?궛寃곌낵媛? true?씠硫? { }?븞?쑝濡? 吏꾩엯?븯?뿬 肄붾뱶 ?떎?뻾 (利? 泥섎━?븳?떎?뒗 ?쑜)
+		//if문()안에는 비교 연산이나 논리연산처럼 boolean값을 반환해야함.
+		//괄호 안의 연산결과가 true이면 { }안으로 진입하여 코드 실행 (즉 처리한다는 뜻)
 		if (score > 60) {
-			System.out.println("?빀寃⑹엯?땲?떎.");
+			System.out.println("합격입니다.");
 		}
-		//援??뙟 ?닔?뾽 ?삁?젣
-		System.out.println("if臾? 寃곌낵?뿉 ?긽愿??뾾?씠 ?떎?뻾?븯?뒗 臾?");
+		//국쌤 수업 예제
+		System.out.println("if문 결과에 상관없이 실행하는 문");
 	}
 }

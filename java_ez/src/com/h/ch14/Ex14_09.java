@@ -3,7 +3,7 @@ package com.h.ch14;
 import java.util.*;
 import java.util.stream.*;
 
-//Stream?쓽 reduce()理쒖쥌?뿰?궛?옄
+//Stream의 reduce()최종연산자
 public class Ex14_09 {
 
 	public static void main(String[] args) {
@@ -14,21 +14,21 @@ public class Ex14_09 {
 		};
 		
 		Stream.of(strArr).forEach(System.out::println);
-		//諛곗뿴 strArr?쓣 Stream媛앹껜濡? 留뚮뱾?뼱?꽌 異쒕젰?븳?떎.
+		//배열 strArr을 Stream객체로 만들어서 출력한다.
 		
 		boolean noEmptyStr =
 				Stream.of(strArr).noneMatch(s -> s.length() == 0);
-		//noneMatch()?뒗 紐⑤뱺 ?슂?냼媛? 議곌굔?뿉 留욎? ?븡?쑝硫? true
+		//noneMatch()는 모든 요소가 조건에 맞지 않으면 true
 		System.out.println("noEmptyStr : " + noEmptyStr);
 		
 		Optional<String> sWord = Stream.of(strArr)
-				.filter(s->s.charAt(0)=='s') //泥ル쾲吏? ?슂?냼媛? s?씤寃껋쓣 怨⑤씪?궡?꽌
-				.findFirst(); //洹? 以? 泥ル쾲吏몄씤寃껋쓣 李얠쑝?씪?뒗 ?쓽誘?
+				.filter(s->s.charAt(0)=='s') //첫번째 요소가 s인것을 골라내서
+				.findFirst(); //그 중 첫번째인것을 찾으라는 의미
 		
-		//泥? 湲??옄媛? s濡? ?떆?옉?릺?뒗寃껊쭔 ?꽑?깮?븳 ?썑 洹? 以? 泥ル쾲吏? 寃껊쭔 諛섑솚
+		//첫 글자가 s로 시작되는것만 선택한 후 그 중 첫번째 것만 반환
 		System.out.println("sWord = " + sWord.get());
 		
-		//臾몄옄?뿴 Stream?쓣 mapToInt()濡? 湲곕낯?삎 Stream?씤 IntStream?쑝濡? 蹂??솚?븳?떎.
+		//문자열 Stream을 mapToInt()로 기본형 Stream인 IntStream으로 변환한다.
 		IntStream intStream1 = 
 				Stream.of(strArr).mapToInt(String::length);
 		IntStream intStream2 = 
@@ -38,22 +38,22 @@ public class Ex14_09 {
 		IntStream intStream4 = 
 				Stream.of(strArr).mapToInt(String::length);
 		
-		int count = intStream1.reduce(0, (a,b) -> a + 1); //count() ?뿭?븷 ?닔?뻾
-		/* - reduce(珥덇린媛?, BinaryOpperator媛앹껜)硫붿꽌?뱶?뒗 珥덇린媛믪쓣 
-		   - BinaryOpperator媛앹껜?쓽 ?몢媛쒖쓽 ?뙆?씪誘명꽣以? 泥ル쾲吏? ?뙆?씪誘명꽣濡? ?궗?슜?븳?떎.
-		     ?떎?쓬?뿉?뒗 由ы꽩媛믪쓣 珥덇린媛믪쑝濡? ?븯?뿬 諛섎났?쓣 ?븳?떎.
+		int count = intStream1.reduce(0, (a,b) -> a + 1); //count() 역할 수행
+		/* - reduce(초기값, BinaryOpperator객체)메서드는 초기값을 
+		   - BinaryOpperator객체의 두개의 파라미터중 첫번째 파라미터로 사용한다.
+		     다음에는 리턴값을 초기값으로 하여 반복을 한다.
 		*/
-		int sum = intStream2.reduce(0, (a,b) -> a + b); //sum() ?뿭?븷 ?닔?뻾
+		int sum = intStream2.reduce(0, (a,b) -> a + b); //sum() 역할 수행
 		
 		OptionalInt max = intStream3.reduce(Integer::max);
-		//媛? ?슂?냼?쓽 臾몄옄?뿴 以? 媛??옣 湲? 臾몄옄?뿴?쓽 臾몄옄?닔 
+		//각 요소의 문자열 중 가장 긴 문자열의 문자수 
 		OptionalInt min = intStream4.reduce(Integer::min);
-		//媛? ?슂?냼?쓽 臾몄옄?뿴 以? 媛??옣 ?쟻?? 臾몄옄?뿴?쓽 臾몄옄?닔 
+		//각 요소의 문자열 중 가장 적은 문자열의 문자수 
 		
 		System.out.println("count = " + count);
 		System.out.println("sum = "  + sum);
 		System.out.println("max = " + max.getAsInt());
-		//OptionalInt媛앹껜 ?궗?슜?떆 get()?씠 ?븘?땶 getAsInt()瑜? ?궗?슜?븯?옄
+		//OptionalInt객체 사용시 get()이 아닌 getAsInt()를 사용하자
 		System.out.println("min = " + min.getAsInt());
 				
 	}
