@@ -1,2 +1,2 @@
 # workspace_ez
- java_ez - exam
+ java_ez - Java Exam
