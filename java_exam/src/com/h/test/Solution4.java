@@ -8,7 +8,7 @@ public class Solution4 {
 		 Scanner sc = new Scanner(System.in);
 		 System.out.println("문자를 입력 하시오");
 	     String a = sc.next();
-	     a = "HelloWorld!";
+	     
 	     System.out.println(a);
 	     
 	}
