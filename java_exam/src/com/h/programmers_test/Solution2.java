@@ -1,8 +1,9 @@
-package com.h.test;
+package com.h.programmers_test;
 
 import java.util.Scanner;
 
-public class Solution5 {
+//a와 b출력하기
+public class Solution2 {
 	public static void main(String[] args) {
 		   Scanner sc = new Scanner(System.in);
 	       String str = sc.next();
@@ -12,5 +13,4 @@ public class Solution5 {
 	    	   System.out.print(str);
 	       }
 	}
-
 }
