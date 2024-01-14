@@ -1,4 +1,4 @@
-package com.h.programmers_test;
+package com.h.programmers_exam;
 
 import java.util.Scanner;
 
